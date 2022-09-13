@@ -12,9 +12,10 @@ a {
 }
 body {
     padding: 0 15px 0 15px;
+    font-family: 'Monsterrat', sans-serif;
 }
 h1 {
-    font-family: 'Monsterrat';
+    font-family: 'Monsterrat', sans-serif;
 }
 .blogBlock {
     background-color: yellow;
