@@ -17,10 +17,10 @@
         <div>
             {% for post in posts %}
                 <div class="blogBlock">
-                    <h7> published: {{ post.published_date }} </h7>
+                    <h6> Дата публикации: {{ post.published_date }} </h6>
                     <h1><a href="">{{ post.title }}</a></h1>
-                    <h3>Короче:</h3>
                     <h5>{{ post.text|linebreaksbr }}</h5>
+                    <button> Читать далее... </button>
                 </div>
             {% endfor %}
         </div>
