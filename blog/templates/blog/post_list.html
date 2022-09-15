@@ -1,29 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div class="mainLogo">
-            <a id="logoText" href="/">Main page</a>
-        </div>
-        <div>
-            {% for post in posts %}
-                <div class="blogBlock">
-                    <h6> Дата публикации: {{ post.published_date }} </h6>
-                    <h1><a href="">{{ post.title }}</a></h1>
-                    <h5>{{ post.text|linebreaksbr }}</h5>
-                    <button> Читать далее... </button>
-                </div>
-            {% endfor %}
-        </div>
-    </body>
+{% extends 'blog/base.html' %}
 
-</html>
+{% block content %}
+    {% for post in posts %}
+        <div class="blogBlock">
+            <h6> Дата публикации: {{ post.published_date }} </h6>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <button> Читать далее... </button>
+        </div>
+    {% endfor %}
+{% endblock %}
