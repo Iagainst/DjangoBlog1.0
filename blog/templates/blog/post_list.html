@@ -3,8 +3,8 @@
 {% block content %}
     {% for post in posts %}
         <div class="blogBlock">
-            <h6> Дата публикации: {{ post.published_date }} </h6>
-            <h1><a href="">{{ post.title }}</a></h1>
+            <h6 class="PDate"> Дата публикации: {{ post.published_date }} </h6>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
             <button> Читать далее... </button>
         </div>
